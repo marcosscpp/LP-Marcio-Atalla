@@ -1,0 +1,9 @@
+@include respond-to("xl") {
+  @include hero-xl;
+}
+
+@include respond-to("md") {
+  @include hero-md;
+  @include pros-md;
+  @include audience-md;
+}

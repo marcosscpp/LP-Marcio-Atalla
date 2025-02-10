@@ -1,0 +1,9 @@
+.container {
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  width: 80%;
+  @include respond-to("sm") {
+  padding: 2rem 1.25rem;
+  width: 100% !important;
+  }
+}

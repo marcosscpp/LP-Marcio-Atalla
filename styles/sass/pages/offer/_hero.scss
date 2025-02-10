@@ -1,0 +1,76 @@
+.hero {
+  text-align: center;
+  &__container {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-bottom: 0;
+  }
+
+  &__title {
+    align-items: center;
+    color: $orange-300;
+    display: flex;
+    font-size: 5rem;
+    gap: 0 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-transform: uppercase;
+    &-icon {
+      margin-bottom: 1.25rem;
+      width: 5rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.25rem;
+    max-width: 48rem;
+    
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__subtitle {
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__video {
+    max-width: 55rem;
+    width: 100%;
+
+    #smartplayer {
+      border-radius: 1.25rem !important;
+    }
+  }
+  &__btn {
+    margin: 1rem 0;
+  }
+  &__note {
+    font-size: 1.125rem;
+    font-weight: 300;
+    max-width: 48rem;
+  }
+}
+
+@mixin hero-sm {
+  .hero {
+    text-wrap: balance;
+    &__container {
+      gap: 2rem;
+    }
+    
+    &__title {
+      font-size: 4.5rem;
+    }
+
+    &__subtitle {
+      font-size: 2rem;
+    }
+  }
+}

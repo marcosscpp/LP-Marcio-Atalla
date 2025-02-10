@@ -1,0 +1,64 @@
+.author {
+  align-items: center;
+  display: flex;
+  padding-top: 3rem;
+
+  &__content {
+    margin-left: 6rem;
+  }
+
+  &__title {
+    font-weight: 200;
+    font-size: 2rem;
+    margin-bottom: 1.75rem;
+    text-transform: uppercase;
+    strong {
+      display: block;
+      font-family: $secondary-font;
+      font-size: 1.4em;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+  }
+
+  &__texts {
+    display: flex;
+    gap: 2rem;
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+
+  &__image {
+    max-width: 35rem;
+  }
+}
+
+@mixin author-xl {
+  .author {
+    padding: 3rem 1.25rem;
+    text-align: center;
+
+    &__content {
+      max-width: 50rem;
+      margin: 0 auto;
+    }
+
+    &__texts {
+      flex-direction: column;
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}
+
+@mixin author-sm {
+  .author {
+    padding-bottom: 1.25rem;
+
+    &__texts {
+      padding: 0 .5rem;
+    }
+  }
+}

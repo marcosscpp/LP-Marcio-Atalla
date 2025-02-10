@@ -1,0 +1,87 @@
+@mixin respond-to($breakpointMax, $breakpointMin: null) {
+  @if $breakpointMin {
+    @media (min-width: map-get($breakpoints, $breakpointMin)) and (max-width: map-get($breakpoints, $breakpointMax)) {
+      @content;
+    }
+  } @else {
+    @media (max-width: map-get($breakpoints, $breakpointMax)) {
+      @content;
+    }
+  }
+}
+
+@mixin font-face(
+  $font-name,
+  $file-name,
+  $weight: normal,
+  $style: normal,
+  $formats: ("woff2", "woff", "ttf", "otf", "eot")
+) {
+  @font-face {
+    font-family: #{$font-name};
+    src: #{generate-font-src($file-name, $formats)};
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@function generate-font-src($file-name, $formats) {
+  $src-list: ();
+  @each $format in $formats {
+    $mime-type: if(
+      $format == "woff2",
+      "woff2",
+      if(
+        $format == "woff",
+        "woff",
+        if(
+          $format == "ttf",
+          "truetype",
+          if(
+            $format == "otf",
+            "opentype",
+            if($format == "eot", "embedded-opentype", null)
+          )
+        )
+      )
+    );
+    $src-list: append(
+      $src-list,
+      "url('#{$font-path}/#{$file-name}.#{$format}') format('#{$mime-type}')",
+      comma
+    );
+  }
+  @return join($src-list, ", ");
+}
+
+@mixin list-custom-markup($image-path) {
+  position: relative;
+
+  &::before {
+    background-image: url($image-path);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 1.25em;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(calc(-100% - 0.5rem), -50%);
+    width: 1.25em;
+  }
+
+  @include respond-to("sm") {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 0.5rem;
+    &::before {
+      transform: none !important;
+      position: static;
+    }
+  }
+}

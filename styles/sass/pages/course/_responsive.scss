@@ -1,0 +1,18 @@
+@include respond-to("xl") {
+  @include hero-xl;
+  @include author-xl;
+  @include plans-xl;
+}
+
+@include respond-to("md") {
+  @include testimony-md;
+  @include assurance-md;
+}
+
+@include respond-to("sm") {
+  @include stripe-sm;
+  @include pros-sm;
+  @include author-sm;
+  @include plans-sm;
+  @include faq-sm;
+}

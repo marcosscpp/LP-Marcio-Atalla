@@ -1,0 +1,146 @@
+.hero {
+  background: $blue-400;
+  display: flex;
+  min-height: 100vh;
+  justify-content: flex-end;
+  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+  padding-top: 1.5rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rem;
+    padding-left: 4.5rem;
+    margin-right: -5rem;
+  }
+
+  &__headline {
+    font-size: 3.5rem;
+    max-width: 25em;
+    text-wrap: balance;
+  }
+
+  &__list {
+    margin: 1.5rem 0;
+    li {
+      align-items: center;
+      display: flex;
+      gap: 0.75rem;
+      font-size: 1.125rem;
+      font-weight: 300;
+      &::before {
+        content: "";
+        background: url("#{$icon-path}/close.svg") no-repeat center / contain;
+        display: block;
+        height: 1.75rem;
+        width: 1.75rem;
+      }
+    }
+
+    li ~ li {
+      margin-top: 0.75rem;
+    }
+  }
+
+  &__highlight {
+    font-size: 2.5rem;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    font-size: 1.75rem;
+    font-weight: 200;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 25rem;
+  }
+
+  &__registration {
+    margin-top: auto;
+    max-width: 40rem;
+    text-align: center;
+    position: relative;
+
+    &-image {
+      bottom: -1rem;
+      right: 4rem;
+      transform: translateX(100%);
+      width: 15rem;
+      position: absolute;
+    }
+
+    &-title {
+      font-size: 2.125rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &__form {
+    background-color: $blue-100;
+    padding: 1.25rem 4rem;
+  }
+
+  &__image {
+    align-self: flex-end;
+    width: 76rem;
+  }
+}
+
+@mixin hero-xl {
+  .hero {
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem 1.25rem;
+    text-wrap: balance;
+
+    &__content {
+      align-items: center;
+      max-width: 50rem;
+      margin: 0 auto;
+      padding: 2.5rem;
+    }
+
+    &__image {
+      display: none;
+    }
+
+    &__registration {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+@mixin hero-md {
+  .hero {
+    &__content {
+      padding: 0;
+    }
+
+    &__list {
+      margin: 2rem 0;
+      li {
+        flex-direction: column;
+        font-size: 1.5rem;
+      }
+    }
+
+    &__form {
+      padding: 1.25rem 2rem;
+    }
+
+    &__registration {
+      &-image {
+        margin: 0 auto;
+        margin-top: 3rem;
+        transform: none;
+        position: static;
+      }
+    }
+  }
+}

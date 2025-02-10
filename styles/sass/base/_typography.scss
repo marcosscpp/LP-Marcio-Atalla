@@ -1,0 +1,57 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  color: $white;
+  font-family: $secondary-font;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+html {
+  font-size: 162.5%;
+
+  @include respond-to("ultra") {
+    font-size: 137.5%;
+  }
+
+  @include respond-to("xxxl") {
+    font-size: 112.5%;
+  }
+
+  @include respond-to("xxl") {
+    font-size: 95%;
+  }
+
+  @include respond-to("md") {
+    font-size: 87.5%;
+  }
+}
+
+$font-name: "Coco Gothic";
+$font-variants: (
+  ("Normal", 400, normal),
+  ("Bold", 700, normal),
+  ("BoldItalic", 700, italic),
+  ("Fat", 900, normal),
+  ("FatItalic", 900, italic),
+  ("Heavy", 900, normal),
+  ("HeavyItalic", 900, italic),
+  ("Italic", 400, italic),
+  ("Light", 300, normal),
+  ("LightItalic", 300, italic),
+  ("UltraLight", 200, normal),
+  ("UltraLightItalic", 200, italic)
+);
+
+@each $variant in $font-variants {
+  $variant-name: nth($variant, 1);
+  $weight: nth($variant, 2);
+  $style: nth($variant, 3);
+
+  @font-face {
+    font-family: #{$font-name};
+    src: url("#{$font-path}/CocoGothic-#{$variant-name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+    font-display: swap;
+  }
+}

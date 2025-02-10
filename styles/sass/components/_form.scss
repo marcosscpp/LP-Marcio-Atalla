@@ -1,0 +1,94 @@
+.form {
+  border: solid 4px $white;
+  border-radius: 0.5rem;
+  color: $gray-800;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 42rem;
+  padding: 1.25rem;
+  position: relative;
+  text-align: center;
+  &__field {
+    flex: 1;
+  }
+
+  &__input {
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    font-family: "Gothic A1", "Arial", sans-serif;
+    width: 100%;
+  }
+
+  &__observation {
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-align: balance;
+  }
+
+  &__btn {
+    margin-top: 0.5rem;
+  }
+
+  .error-message {
+    color: rgb(115, 0, 0);
+    font-weight: 700;
+    font-family: "Gothic A1", "Arial", sans-serif;
+    font-size: 1.125rem;
+
+    &.active {
+      display: block;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: $blue-400;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: spin 1s infinite linear;
+
+  @keyframes spin {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  &-container {
+    align-items: center;
+    display: none;
+    justify-content: center;
+    background: rgba($blue-100, 50%);
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    &.active {
+      display: flex;
+    }
+  }
+}
+
+@mixin form-md {
+  .form {
+    gap: 1.25rem;
+    &__observation {
+      font-size: 1rem;
+    }
+
+    &__btn {
+      margin-top: 1rem;
+    }
+  }
+}

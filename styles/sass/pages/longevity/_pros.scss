@@ -1,0 +1,74 @@
+.pros {
+  background: linear-gradient(
+    90deg,
+    $white 0%,
+    $orange-300 12%,
+    $blue-400 100%
+  );
+  text-align: center;
+  padding-bottom: 1.25rem;
+  padding-top: 2.5rem;
+
+  &__container {
+    width: 85%;
+  }
+
+  &__title {
+    font-family: $primary-font;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    text-wrap: balance;
+    padding: 0 2rem;
+  }
+
+  &__cards {
+    display: flex;
+    gap: 1rem 2rem;
+  }
+
+  &__card {
+    background-color: rgba($white, 80%);
+    border: 5px solid $white;
+    border-radius: 1.25rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: $blue-400;
+    flex: 1;
+    padding: 0.75rem 1.25rem;
+
+    &-title {
+      font-size: 2.25rem;
+      font-family: $primary-font;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    &-text {
+      font-size: 0.875rem;
+      text-wrap: balance;
+      line-height: 1.1;
+    }
+  }
+}
+
+@mixin pros-md {
+  .pros {
+    padding: 0;
+    &__cards {
+      flex-direction: column;
+    }
+
+    &__card {
+      padding: 1.25rem;
+
+      &-text {
+        font-size: 1rem;
+      }
+    }
+  }
+}

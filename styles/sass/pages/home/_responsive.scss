@@ -1,0 +1,13 @@
+@include respond-to("xl") {
+  @include hero-xl;
+  @include about-xl;
+}
+
+@include respond-to("md") {
+  @include form-md;
+  @include hero-md;
+}
+
+@include respond-to("sm") {
+  @include about-sm;
+}

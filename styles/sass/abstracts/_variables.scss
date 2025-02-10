@@ -1,0 +1,28 @@
+/* Colors */
+
+/* Grayscale */
+$white: #ffffff;
+$gray-100: #ebeced;
+$gray-200: #d9d9d9;
+$gray-300: #bcbec0;
+$gray-600: #5d5d5d;
+$gray-800: #30302f;
+$black: #050505;
+
+/* Brand */
+$blue-100: #c2dce6;
+$blue-400: #016e95;
+$green-300: #15d41e;
+$orange-300: #ee6e03;
+
+/* Typograpy */
+$primary-font: "League Gothic", sans-serif;
+$secondary-font: "Coco Gothic", "Gothic A1", sans-serif;
+$mono-font: "Roboto Mono", monospace;
+
+// Folders Path
+$base-path: "../assets";
+$image-path: "#{$base-path}/images";
+$icon-path: "#{$base-path}/icons";
+$background-path: "#{$base-path}/backgrounds";
+$font-path: "#{$base-path}/fonts";

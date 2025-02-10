@@ -1,0 +1,10 @@
+@include respond-to("xl") {
+  @include info-xl;
+}
+
+
+@include respond-to("sm") {
+  @include stripe-sm;
+  @include info-sm;
+  @include hero-sm;
+}
