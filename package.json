@@ -11,6 +11,7 @@
     "sass2": "sass --watch styles/sass/offer.scss:styles/offer.css --style compressed",
     "sass3": "sass --watch styles/sass/course.scss:styles/course.css --style compressed",
     "sass4": "sass --watch styles/sass/longevity.scss:styles/longevity.css --style compressed",
+    "sass5": "sass --watch styles/sass/thank-you.scss:styles/thank-you.css --style compressed",
     "compress-images": "node compress-images.js",
     "optimize-svgs": "node optimize-svg.js",
     "replace-references": "node replace-references.js",

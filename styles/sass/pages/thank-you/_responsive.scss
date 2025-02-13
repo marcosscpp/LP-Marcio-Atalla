@@ -1,0 +1,8 @@
+@include respond-to("xl") {
+  @include hero-xl;
+}
+
+@include respond-to("md") {
+  @include hero-md;
+  @include next-steps-md;
+}
